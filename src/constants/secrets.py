@@ -1,1 +1,1 @@
-TODOIST_BEARER_TOKEN = ''
+TODOIST_BEARER_TOKEN = 'adjustment'
