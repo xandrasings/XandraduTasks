@@ -1,9 +1,8 @@
 
-from client import todoist_client
+from service import todoist_service
 
-print("main")
-response = todoist_client.getTaskCompletions('832239031')
-print(response.status_code)
-print(response.json())
-print(response.headers)
+todoist_service.getTaskCompletions('832239031')
+# print(response.status_code)
+# print(response.json())
+# print(response.headers)
 
