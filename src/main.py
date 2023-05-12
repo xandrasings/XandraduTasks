@@ -1,7 +1,9 @@
 
-from service import todoist_service
+from service import habitify_service
 
-todoist_service.getTaskCompletions('832239031')
+
+for habit in habitify_service.getHabits():
+    habit.print()
 # print(response.status_code)
 # print(response.json())
 # print(response.headers)
