@@ -12,7 +12,7 @@ with open('user_data/habit_tasks_completions.json', 'r') as file:
     habit_task_completions = json.load(file)
 for habit_id in habit_task_completions:
     for task_id in habit_task_completions[habit_id]:
-        habit_task_completions[habit_id][task_id] = set(habit_task_completions['-NKzgr7JQl7MiTrOtJmu']['832239031'])
+        habit_task_completions[habit_id][task_id] = set(habit_task_completions[habit_id][task_id])
 
 for habit_id in habit_task_completions:
     for task_id in habit_task_completions[habit_id]:
@@ -22,7 +22,7 @@ for habit_id in habit_task_completions:
 #serialize to json
 for habit_id in habit_task_completions:
     for task_id in habit_task_completions[habit_id]:
-        habit_task_completions[habit_id][task_id] = list(habit_task_completions['-NKzgr7JQl7MiTrOtJmu']['832239031'])
+        habit_task_completions[habit_id][task_id] = list(habit_task_completions[habit_id][task_id])
         habit_task_completions[habit_id][task_id].sort(reverse=True)
 jsondata = json.dumps(habit_task_completions, indent=4)
 
