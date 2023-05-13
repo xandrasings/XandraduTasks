@@ -1,9 +1,9 @@
 class Habit:
     def __init__(self, row):
-        self.name = row[0]
-        self.id = row[1]
+        self.id = row[0]
+        self.name = row[1]
         self.goal = int(row[2])
+        self.tasks = []
 
     def print(self):
         print("HABIT: " + self.name)
-

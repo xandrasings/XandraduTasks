@@ -5,9 +5,14 @@ def getTaskCompletions(object_id):
 
     # print(response.status_code) // deal with status code errors?
 
-    event_timestamps = []
+    event_timestamps = set()
     for event in response.json()['events']:
-        event_timestamps.append(event['event_date'])
+        event_timestamps.add(event['event_date'])
+
+    print(event_timestamps)
+    print(type(event_timestamps))
+
+    return event_timestamps
 
 
 

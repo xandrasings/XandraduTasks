@@ -1,10 +1,33 @@
+import json
 
-from service import habitify_service
+from service import todoist_service
 
 
-for habit in habitify_service.getHabits():
-    habit.print()
-# print(response.status_code)
-# print(response.json())
-# print(response.headers)
+
+habit_task_completions = {}
+
+
+#deserialize from json file
+with open('user_data/habit_tasks_completions.json', 'r') as file:
+    habit_task_completions = json.load(file)
+for habit_id in habit_task_completions:
+    for task_id in habit_task_completions[habit_id]:
+        habit_task_completions[habit_id][task_id] = set(habit_task_completions['-NKzgr7JQl7MiTrOtJmu']['832239031'])
+
+for habit_id in habit_task_completions:
+    for task_id in habit_task_completions[habit_id]:
+        habit_task_completions[habit_id][task_id].update(todoist_service.getTaskCompletions(task_id))
+
+
+#serialize to json
+for habit_id in habit_task_completions:
+    for task_id in habit_task_completions[habit_id]:
+        habit_task_completions[habit_id][task_id] = list(habit_task_completions['-NKzgr7JQl7MiTrOtJmu']['832239031'])
+        habit_task_completions[habit_id][task_id].sort(reverse=True)
+jsondata = json.dumps(habit_task_completions, indent=4)
+
+#save to file
+with open('user_data/habit_tasks_completions.json', 'w') as outfile:
+    outfile.write(jsondata)
+
 
