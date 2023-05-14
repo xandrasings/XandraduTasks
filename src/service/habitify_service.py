@@ -1,16 +1,42 @@
+import time
+
+from datetime import datetime, timedelta
 from src.client import habitify_client
-from src.dao import habitify_dao
-
-def getHabitifyHabits():
-    response = habitify_client.getHabits()
-
-    # print(response.status_code) // deal with status code errors?
-
-    event_timestamps = []
-    for event in response.json()['events']:
-        event_timestamps.append(event['event_date'])
-
-def getHabits():
-    return(habitify_dao.getHabits())
+from src.constants.habitify_constants import *
 
 
+def generate_habit_behavior(habit_task_completions):
+    habit_behavior = {}
+
+    for habit_id in habit_task_completions:
+        habit_behavior[habit_id] = {}
+
+        for task_id in habit_task_completions[habit_id]:
+            for completion in habit_task_completions[habit_id][task_id]:
+                completion_day = (
+                            datetime.strptime(completion, FORMAT_DATE_TIME_PRECISE) + timedelta(hours=1)).strftime(
+                    FORMAT_DATE)
+                if completion_day in habit_behavior[habit_id]:
+                    habit_behavior[habit_id][completion_day] = habit_behavior[habit_id][completion_day] + 1
+                else:
+                    habit_behavior[habit_id][completion_day] = 1
+
+    return habit_behavior
+
+
+def update_habitify(habit_behavior):
+    for habit_id in habit_behavior:
+        for date in habit_behavior[habit_id]:
+            dt = datetime.strptime(date, FORMAT_DATE)
+            response = habitify_client.get_habit_date_status(habit_id, dt.strftime(FORMAT_DATE_PARAM))
+
+            current_val = response.json()[KEY_DATA][KEY_PROGRESS][KEY_CURRENT_VALUE]
+
+            offset = time.localtime().tm_gmtoff
+
+            for i in range(max(habit_behavior[habit_id][date] - current_val, 0)):
+                habitify_client.post_habit_log(habit_id, generate_habit_log_date(date, offset))
+
+
+def generate_habit_log_date(date, offset):
+    return (datetime.strptime(date, FORMAT_DATE) - timedelta(seconds=offset) + timedelta(hours=12)).strftime(FORMAT_DATE_TIME_OFFSET)
