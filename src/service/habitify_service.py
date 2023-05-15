@@ -20,8 +20,7 @@ def update_habitify():
 
             offset = time.localtime().tm_gmtoff
 
-            for i in range(max(habit_behavior[habit_id][date] - current_val, 0)):
-                habitify_client.post_habit_log(habit_id, generate_habit_log_date(date, offset))
+            habitify_client.post_habit_log(habit_id, max(habit_behavior[habit_id][date] - current_val, 0), generate_habit_log_date(date, offset))
 
 
 def generate_habit_behavior():

@@ -26,14 +26,14 @@ def get_habit_date_status(habit_id, date):
     return requests.get(url, headers=headers)
 
 
-def post_habit_log(habit_id, date):
+def post_habit_log(habit_id, quantity, date):
     headers = {
         HEADER_AUTHORIZATION: HABITIFY_TOKEN
     }
     url = f'{DOMAIN}{PATH_POST_LOGS}{habit_id}'
     body = {
         BODY_UNIT_TYPE: BODY_VALUE_REP,
-        BODY_VALUE: 1,
+        BODY_VALUE: quantity,
         BODY_TARGET_DATE: date
     }
 
