@@ -5,7 +5,7 @@ from src.constants.todoist_constants import *
 from src.constants.secrets import *
 
 
-def get_task_completions(object_id):
+def get_latest_task_completions(object_id):
     headers = {
         HEADER_AUTHORIZATION: f'{HEADER_VALUE_BEARER_PREFIX}{TODOIST_BEARER_TOKEN}'
     }

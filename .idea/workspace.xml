@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db1d5c91-972f-41c3-9e68-3101f00f9969" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/user_data/habit_tasks.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_data/task_completions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_data/tasks.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/habitify_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/habitify_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/todoist_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/todoist_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/data_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/data_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/habitify_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/habitify_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/todoist_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/todoist_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/habitify_dao.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Habit.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/habitify_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/habitify_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/todoist_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/todoist_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user_data/habits.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user_data/task_completions.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user_data/tasks.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +43,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/xandrabest/Programming/XandraduTasks/src",
+    "last_opened_file_path": "/Users/xandrabest/Programming/XandraduTasks/src/user_data",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -56,6 +51,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/user_data" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/dao" />
     </key>
