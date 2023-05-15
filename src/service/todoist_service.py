@@ -21,7 +21,7 @@ def get_habit_task_completions():
 
 def read_task_completions():
     # deserialize from json file
-    with open(FILE_PATH_TASK_COMPLETIONS, CODE_READ) as file:
+    with open(FILE_PATH_TASK_COMPLETIONS, MODE_READ) as file:
         task_completions = json.load(file)
 
     # change completion list to set
@@ -61,19 +61,19 @@ def write_task_completions(task_completions):
     jsondata = json.dumps(task_completions, indent=4)
 
     # save to file
-    with open(FILE_PATH_TASK_COMPLETIONS, CODE_WRITE) as outfile:
+    with open(FILE_PATH_TASK_COMPLETIONS, MODE_WRITE) as outfile:
         outfile.write(jsondata)
 
 
 def read_habit_tasks():
     # deserialize from json file
-    with open(FILE_PATH_HABIT_TASKS, CODE_READ) as file:
+    with open(FILE_PATH_HABIT_TASKS, MODE_READ) as file:
         return json.load(file)
 
 
 def read_habit_task_completions():
     # deserialize from json file
-    with open(FILE_PATH_HABIT_TASK_COMPLETIONS, CODE_READ) as file:
+    with open(FILE_PATH_HABIT_TASK_COMPLETIONS, MODE_READ) as file:
         habit_task_completions = json.load(file)
 
     # change completion list to set
@@ -104,5 +104,5 @@ def write_habit_task_completions(habit_task_completions):
     jsondata = json.dumps(habit_task_completions, indent=4)
 
     # save to file
-    with open(FILE_PATH_HABIT_TASK_COMPLETIONS, CODE_WRITE) as outfile:
+    with open(FILE_PATH_HABIT_TASK_COMPLETIONS, MODE_WRITE) as outfile:
         outfile.write(jsondata)
