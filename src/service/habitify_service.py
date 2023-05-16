@@ -23,9 +23,9 @@ def update_habitify():
             dt = datetime.strptime(date, FORMAT_DATE)
             response = habitify_client.get_habit_date_status(habit_id, dt.strftime(FORMAT_DATE_PARAM))
 
-            current_val = response.json()[KEY_DATA][KEY_PROGRESS][KEY_CURRENT_VALUE]
+            increment = max(habit_behavior[habit_id][date] - response.json()[KEY_DATA][KEY_PROGRESS][KEY_CURRENT_VALUE], 0)
 
-            habitify_client.post_habit_log(habit_id, max(habit_behavior[habit_id][date] - current_val, 0), generate_habit_log_date(date, offset))
+            habitify_client.post_habit_log(habit_id, increment, generate_habit_log_date(date, offset))
 
 
 def generate_habit_behavior():

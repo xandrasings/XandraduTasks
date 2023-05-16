@@ -41,10 +41,7 @@ def update_task_completions(task_completions):
 def get_latest_task_completions(object_id):
     response = todoist_client.get_latest_task_completions(object_id)
 
-
     # TODO deal with unexpected status codes? failures to parse?
-
-
 
     event_timestamps = set()
     for event in response.json()[KEY_EVENTS]:

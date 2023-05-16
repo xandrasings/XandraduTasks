@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="db1d5c91-972f-41c3-9e68-3101f00f9969" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/data_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/data_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/habitify_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/habitify_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/todoist_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/todoist_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user_data/habitify_updates.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_data/habitify_updates.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
