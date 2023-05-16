@@ -11,20 +11,8 @@ from src.dao import dao
 
 
 def update_habitify():
-    habit_behavior = generate_habit_behavior()
-
-    # run_timestamp = datetime.now(get_localzone())
-    # offset = run_timestamp.utcoffset().total_seconds()
-    #
-    # for habit_id in habit_behavior:
-    #     for date in habit_behavior[habit_id]:
-    #         dt = datetime.strptime(date, FORMAT_DATE)
-    #         response = habitify_client.get_habit_date_status(habit_id, dt.strftime(FORMAT_DATE_PARAM))
-    #
-    #         increment = max(habit_behavior[habit_id][date] - response.json()[KEY_DATA][KEY_PROGRESS][KEY_CURRENT_VALUE],
-    #                         0)
-    #
-    #         # habitify_client.post_habit_log(habit_id, increment, generate_habit_log_date(date, offset))
+    habit_history = generate_habit_history()
+    # print(habit_behavior)
 
 
 def generate_habit_behavior():
@@ -33,14 +21,10 @@ def generate_habit_behavior():
 
     habit_behavior = {}
 
-    print(task_behavior)
-
     for task_id in task_behavior:
-        print(task_id)
         habit_id = task_habits[task_id]
 
         for timestamp in task_behavior[task_id]:
-            print(f'{task_id} {timestamp}')
             increment_date = get_increment_date(timestamp, habit_id)
 
             if increment_date is not None:
@@ -51,7 +35,13 @@ def generate_habit_behavior():
 
                 habit_behavior[habit_id][increment_date] = habit_behavior[habit_id][increment_date] + 1
 
+    return habit_behavior
+
 
 def get_increment_date(timestamp, habit_id):
     # TODO complex logic about what is the check date for a given habit and timestamp
     return timestamp.strftime(FORMAT_DATE)
+
+def generate_habit_history():
+    habit_behavior = generate_habit_behavior()
+    habits = dao.get_habits()

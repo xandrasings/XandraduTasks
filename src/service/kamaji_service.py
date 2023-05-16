@@ -8,7 +8,7 @@ from src.service import habitify_service
 
 def do_stuff():
     establish_runtime()
-    task_behavior = habitify_service.generate_habit_behavior()
+    habitify_service.update_habitify()
 
 
 def establish_runtime():

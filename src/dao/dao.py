@@ -37,3 +37,6 @@ def get_tasks():
 
 def get_task_habits():
     return get_data(FILE_PATH_TASK_HABITS)
+
+def get_habits():
+    return get_data(FILE_PATH_HABITS)
