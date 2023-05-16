@@ -16,3 +16,6 @@ PARAM_VALUE_LIMIT_MAX = 100
 
 KEY_EVENTS = 'events'
 KEY_EVENT_DATE = 'event_date'
+KEY_ID = 'id'
+
+FORMAT_DATETIME = '%Y-%m-%dT%H:%M:%S.000000Z'
